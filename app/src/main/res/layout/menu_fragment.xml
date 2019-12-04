@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".fragment.MenuFragment">
+    <data>
+        <variable
+            name="menu_clickProxy"
+            type="com.phz.viewmodeldemo.fragment.MenuFragment.ClickProxy" />
+    </data>
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/view_height"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:gravity="center"
+            android:text="ViewModelPractice"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ObservableViewModel"
+            android:onClick="@{()->menu_clickProxy.toMyObservableViewModelFragment()}"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ObservableFieldViewModel"
+            android:onClick="@{()->menu_clickProxy.toMyObservableFieldViewModelFragment()}"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LiveDataViewModel"
+            android:onClick="@{()->menu_clickProxy.toMyLiveDataViewModelFragment()}"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>
